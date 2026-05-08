@@ -79,10 +79,6 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/editor/editor-ui/color-picker.tsx",
-          "type": "registry:component"
-        },
-        {
           "path": "src/components/editor/editor-ui/content-editable.tsx",
           "type": "registry:component"
         },
@@ -92,14 +88,6 @@
         },
         {
           "path": "src/components/editor/editor-ui/image-component.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/editor-ui/image-resizer.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/extensions/auto-link-extension.tsx",
           "type": "registry:component"
         },
         {
@@ -455,38 +443,6 @@
           "type": "registry:component"
         },
         {
-          "path": "src/components/editor/shared/caret-from-point.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/environment.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/invariant.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/normalize-class-names.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/react-patches.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/react-test-utils.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/simple-diff-with-cursor.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/shared/use-layout-effect.ts",
-          "type": "registry:component"
-        },
-        {
           "path": "src/components/editor/themes/editor-theme.css",
           "type": "registry:file",
           "target": "src/components/editor/themes/editor-theme.css"
@@ -529,10 +485,6 @@
         },
         {
           "path": "src/components/editor/utils/get-selected-node.ts",
-          "type": "registry:component"
-        },
-        {
-          "path": "src/components/editor/utils/guard.ts",
           "type": "registry:component"
         },
         {
