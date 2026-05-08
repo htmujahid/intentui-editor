@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "intentui": {
+      "source": "intentui/skills",
+      "sourceType": "github",
+      "skillPath": "intentui/SKILL.md",
+      "computedHash": "7c4fb6411ebc2920d3be96c05ed55472f1069954bf85c601d21a2c7c1edd76a8"
+    }
+  }
+}
