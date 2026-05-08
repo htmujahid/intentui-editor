@@ -246,7 +246,7 @@ export function Editor({
         <div className="relative flex flex-1 flex-col min-h-0">
           <ToolbarPlugin>
             {({ blockType }) => (
-              <div className="vertical-align-middle z-10 flex flex-wrap items-center gap-2 border-b p-1 shrink-0">
+              <div className="vertical-align-middle z-10 flex max-h-20 items-center gap-2 overflow-x-auto border-b p-1 shrink-0">
                 {toolbarItems.undoRedo && <HistoryToolbarPlugin />}
                 {toolbarItems.undoRedo && (
                   <Separator orientation="vertical" className="!h-7" />
