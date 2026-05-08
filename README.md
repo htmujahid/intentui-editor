@@ -1,73 +1,101 @@
-# React + TypeScript + Vite
+# intentui-editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visual builder for a feature-rich [Lexical](https://lexical.dev) editor that generates production-ready React + TypeScript code.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+intentui-editor is a configurator: toggle features in the left sidebar, see the editor update live, then switch to the **Code** view to copy a self-contained TSX component you can drop into your own project. The editor itself is built on Lexical (Meta's text editor framework) and styled with [intentui](https://intentui.com) components on top of [Tailwind CSS](https://tailwindcss.com) v4.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Toolbar**
+- Block formats: paragraph, h1–h3, numbered/bulleted/check lists, quote, code block
+- Inline: bold, italic, underline, strikethrough, sub/superscript, code
+- Font family, font size, font color, background color
+- Element/text alignment, link insertion, clear formatting
+- Block insert: divider, image, table, columns, embeds (Twitter, YouTube)
+- Undo/redo with history
 
-## Expanding the ESLint configuration
+**Footer actions**
+- Character count, speech-to-text, share, import/export
+- Markdown toggle, view-only mode, clear editor, tree view
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Plugins**
+- Slash command picker, emoji picker, @mentions
+- Draggable blocks, autocomplete, autolink
+- Floating text and link toolbars, context menu
+- Auto-embed (Twitter, YouTube), tab indentation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Content types**
+- Images (paste & drop), tables, multi-column layouts
+- Code blocks with [Shiki](https://shiki.style) syntax highlighting
+- Date/time elements, mentions, emojis, hashtags
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Code generation**
+- Each sidebar toggle maps to a spec (imports, extensions, nodes, plugins, JSX)
+- Specs are merged and deduplicated into one TSX file rendered with Shiki
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**Accessibility & theming**
+- [React Aria Components](https://react-spectrum.adobe.com/react-aria/) primitives throughout
+- Dark / light / system theme — press `d` to toggle
+
+## Tech stack
+
+- React 19, TypeScript, Vite
+- Lexical (`@lexical/code`, `list`, `table`, `markdown`, `link`, `history`, `file`, `hashtag`)
+- Tailwind CSS v4 + intentui / shadcn-style components
+- React Aria Components
+- Shiki, Recharts, Motion, Sonner, Embla Carousel, date-fns, Lucide icons
+
+## Getting started
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The dev server runs at <http://localhost:5173>.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Scripts
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Script          | Description                              |
+| --------------- | ---------------------------------------- |
+| `pnpm dev`      | Vite dev server with HMR                 |
+| `pnpm build`    | Type-check (`tsc -b`) + production build |
+| `pnpm lint`     | Run ESLint                               |
+| `pnpm preview`  | Preview the production build locally     |
+
+## Project structure
+
 ```
+src/
+├── App.tsx                              # Top-level layout (sidebar + viewer + toolbar)
+├── main.tsx                             # React entry point
+├── components/
+│   ├── block-viewer-provider.tsx        # State for the configurator
+│   ├── block-viewer-sidebar.tsx         # Feature toggles
+│   ├── block-viewer-toolbar.tsx         # Preview/Code switcher
+│   ├── code-viewer.tsx                  # Code view (Shiki)
+│   ├── theme-provider.tsx               # Dark/light/system theme
+│   ├── blocks/
+│   │   └── editor-x.tsx                 # The full editor block rendered in the preview
+│   ├── editor/                          # Lexical extensions, nodes, plugins, themes, transformers
+│   └── ui/                              # intentui / shadcn-style components
+├── hooks/
+└── lib/
+    ├── editor-feature-registry.ts       # Maps sidebar toggles → code artifacts
+    ├── generate-editor-code.ts          # Assembles the generated TSX component
+    └── highlight-code.ts                # Shiki-based highlighting
+```
+
+## How code generation works
+
+Sidebar state is held in `BlockViewerProvider`. Each toggle resolves to a spec in `src/lib/editor-feature-registry.ts` describing the imports, extensions, nodes, plugins, and JSX it needs. `src/lib/generate-editor-code.ts` merges those specs — deduplicating imports and ordering them (external packages before internal `@/` paths) — into one self-contained component. The Code view in the toolbar renders that source with Shiki so you can copy it straight into your own project.
+
+## Contributing
+
+Issues and pull requests are welcome.
+
+## License
+
+TBD.
