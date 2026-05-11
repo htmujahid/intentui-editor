@@ -26,8 +26,7 @@
         "@lexical/text",
         "@lexical/utils",
         "lexical",
-        "lodash",
-        "lucide-react"
+        "lodash"
       ],
       "devDependencies": [
         "@types/lodash"

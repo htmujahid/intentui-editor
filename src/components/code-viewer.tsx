@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Check, Copy } from "lucide-react";
+import { CheckIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { highlightCode } from "@/lib/highlight-code";
@@ -48,7 +48,7 @@ export function CodeViewer({
             aria-label="Copy code"
             onPress={() => copyToClipboard(code)}
           >
-            {isCopied ? <Check /> : <Copy />}
+            {isCopied ? <CheckIcon /> : <DocumentDuplicateIcon />}
           </Button>
         </div>
       </figcaption>

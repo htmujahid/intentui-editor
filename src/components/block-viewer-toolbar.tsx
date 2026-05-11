@@ -1,4 +1,4 @@
-import { Check, Terminal } from "lucide-react";
+import { CheckIcon, CommandLineIcon } from "@heroicons/react/24/outline";
 
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { useSearchParams } from "@/hooks/use-search-params";
@@ -44,7 +44,7 @@ export function BlockViewerToolbar() {
             copyToClipboard(`npx shadcn@latest add ${item.name}`);
           }}
         >
-          {isCopied ? <Check /> : <Terminal />}
+          {isCopied ? <CheckIcon /> : <CommandLineIcon />}
           <span>npx shadcn add {item.name}</span>
         </Button>
       </div>
