@@ -55,7 +55,7 @@ export function CodeViewer({
       <div
         // biome-ignore lint/security/noDangerouslySetInnerHtml: shiki output is trusted
         dangerouslySetInnerHTML={{ __html: html }}
-        className="no-scrollbar overflow-y-auto flex-1 text-[13px]"
+        className="no-scrollbar overflow-y-auto flex-1 text-[13px] px-4"
       />
     </figure>
   );

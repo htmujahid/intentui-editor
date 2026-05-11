@@ -16,7 +16,7 @@ export function InsertImage() {
       }}
     >
       <div className="flex items-center gap-1">
-        <PhotoIcon className="size-4" />
+        <PhotoIcon className="size-4" width={16} height={16} />
         <span>Image</span>
       </div>
     </MenuItem>

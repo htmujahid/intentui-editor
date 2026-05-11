@@ -16,7 +16,7 @@ export function InsertColumnsLayout() {
       }
     >
       <div className="flex items-center gap-1">
-        <ViewColumnsIcon />
+        <ViewColumnsIcon className="size-4" width={16} height={16} />
         <span>Columns Layout</span>
       </div>
     </MenuItem>

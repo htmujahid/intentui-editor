@@ -16,7 +16,7 @@ export function InsertTable() {
       }
     >
       <div className="flex items-center gap-1">
-        <TableCellsIcon className="size-4" />
+        <TableCellsIcon className="size-4" width={16} height={16} />
         <span>Table</span>
       </div>
     </MenuItem>
