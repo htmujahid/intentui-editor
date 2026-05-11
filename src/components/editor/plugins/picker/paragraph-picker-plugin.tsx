@@ -5,13 +5,13 @@ import {
   $isRangeSelection,
 } from "lexical";
 
-import { TextIcon } from "lucide-react";
+import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
 
 import { ComponentPickerOption } from "@/components/editor/plugins/picker/component-picker-option";
 
 export function ParagraphPickerPlugin() {
   return new ComponentPickerOption("Paragraph", {
-    icon: <TextIcon className="size-4" />,
+    icon: <Bars3BottomLeftIcon className="size-4" />,
     keywords: ["normal", "paragraph", "p", "text"],
     onSelect: (_, editor) =>
       editor.update(() => {

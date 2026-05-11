@@ -8,9 +8,10 @@ import {
   type LexicalEditor,
 } from "lexical";
 
-import { CircleCheckIcon, CopyIcon } from "lucide-react";
 
 import { useDebounce } from "@/components/editor/editor-hooks/use-debounce";
+import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import { Square2StackIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   editor: LexicalEditor;
@@ -60,9 +61,9 @@ export function CopyButton({ editor, getCodeDOMNode }: Props) {
       aria-label="copy"
     >
       {isCopyCompleted ? (
-        <CircleCheckIcon className="size-4" />
+        <CheckCircleIcon className="size-4" />
       ) : (
-        <CopyIcon className="size-4" />
+        <Square2StackIcon className="size-4" />
       )}
     </button>
   );

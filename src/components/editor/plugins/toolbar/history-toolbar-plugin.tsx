@@ -10,7 +10,10 @@ import {
   UNDO_COMMAND,
 } from "lexical";
 
-import { RedoIcon, UndoIcon } from "lucide-react";
+import {
+  ArrowUturnLeftIcon,
+  ArrowUturnRightIcon,
+} from "@heroicons/react/24/outline";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { Button } from "@/components/ui/button";
@@ -64,7 +67,7 @@ export function HistoryToolbarPlugin() {
         size="sq-sm"
         intent="outline"
       >
-        <UndoIcon className="size-4" />
+        <ArrowUturnLeftIcon className="size-4" />
       </Button>
       <Button
         isDisabled={!canRedo || !isEditable}
@@ -76,7 +79,7 @@ export function HistoryToolbarPlugin() {
         intent="outline"
         size="sq-sm"
       >
-        <RedoIcon className="size-4" />
+        <ArrowUturnRightIcon className="size-4" />
       </Button>
     </ButtonGroup>
   );

@@ -8,7 +8,7 @@ import {
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { CLEAR_HISTORY_COMMAND } from "lexical";
 
-import { SendIcon } from "lucide-react";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { toast } from "sonner";
 
 import {
@@ -53,7 +53,7 @@ export function ShareContentPlugin() {
         }
         aria-label="Share Playground link to current editor state"
       >
-        <SendIcon className="size-4" />
+        <PaperAirplaneIcon className="size-4" />
       </Button>
       <TooltipContent>Share Content</TooltipContent>
     </Tooltip>

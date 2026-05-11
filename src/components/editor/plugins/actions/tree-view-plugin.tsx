@@ -3,7 +3,7 @@ import type { JSX } from "react";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { TreeView } from "@lexical/react/LexicalTreeView";
 
-import { NotebookPenIcon } from "lucide-react";
+import { CodeBracketSquareIcon } from "@heroicons/react/24/outline";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,7 +19,7 @@ export function TreeViewPlugin(): JSX.Element {
   return (
     <Modal>
       <Button intent="plain" size="sq-sm" aria-label="Show editor tree">
-        <NotebookPenIcon className="size-4" />
+        <CodeBracketSquareIcon className="size-4" />
       </Button>
       <ModalContent size="2xl">
         <ModalHeader>

@@ -20,13 +20,13 @@ import {
 } from "lexical";
 
 import {
-  Clipboard,
-  ClipboardType,
-  Copy,
-  Link2Off,
-  Scissors,
-  Trash2,
-} from "lucide-react";
+  ClipboardDocumentIcon,
+  ClipboardIcon,
+  DocumentDuplicateIcon,
+  LinkSlashIcon,
+  ScissorsIcon,
+  TrashIcon,
+} from "@heroicons/react/24/outline";
 
 export function ContextMenuPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext();
@@ -39,7 +39,7 @@ export function ContextMenuPlugin(): JSX.Element {
         },
         $showOn: (node: LexicalNode) => $isLinkNode(node.getParent()),
         disabled: false,
-        icon: <Link2Off className="h-4 w-4" />,
+        icon: <LinkSlashIcon className="h-4 w-4" />,
       }),
       new NodeContextMenuSeparator({
         $showOn: (node: LexicalNode) => $isLinkNode(node.getParent()),
@@ -49,14 +49,14 @@ export function ContextMenuPlugin(): JSX.Element {
           editor.dispatchCommand(CUT_COMMAND, null);
         },
         disabled: false,
-        icon: <Scissors className="h-4 w-4" />,
+        icon: <ScissorsIcon className="h-4 w-4" />,
       }),
       new NodeContextMenuOption(`Copy`, {
         $onSelect: () => {
           editor.dispatchCommand(COPY_COMMAND, null);
         },
         disabled: false,
-        icon: <Copy className="h-4 w-4" />,
+        icon: <DocumentDuplicateIcon className="h-4 w-4" />,
       }),
       new NodeContextMenuOption(`Paste`, {
         $onSelect: () => {
@@ -86,7 +86,7 @@ export function ContextMenuPlugin(): JSX.Element {
           });
         },
         disabled: false,
-        icon: <Clipboard className="h-4 w-4" />,
+        icon: <ClipboardIcon className="h-4 w-4" />,
       }),
       new NodeContextMenuOption(`Paste as Plain Text`, {
         $onSelect: () => {
@@ -110,7 +110,7 @@ export function ContextMenuPlugin(): JSX.Element {
           });
         },
         disabled: false,
-        icon: <ClipboardType className="h-4 w-4" />,
+        icon: <ClipboardDocumentIcon className="h-4 w-4" />,
       }),
       new NodeContextMenuSeparator(),
       new NodeContextMenuOption(`Delete Node`, {
@@ -133,7 +133,7 @@ export function ContextMenuPlugin(): JSX.Element {
           }
         },
         disabled: false,
-        icon: <Trash2 className="h-4 w-4" />,
+        icon: <TrashIcon className="h-4 w-4" />,
       }),
     ];
   }, [editor]);

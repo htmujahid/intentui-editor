@@ -7,13 +7,13 @@ import {
   type BaseSelection,
 } from "lexical";
 
-import { ChevronDownIcon } from "lucide-react";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { useUpdateToolbarHandler } from "@/components/editor/editor-hooks/use-update-toolbar";
 import { blockTypeToBlockName } from "@/components/editor/plugins/toolbar/block-format/block-format-data";
 import { Button } from "@/components/ui/button";
 import { Menu, MenuContent } from "@/components/ui/menu";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export function BlockFormatDropDown({
   children,
@@ -72,7 +72,7 @@ export function BlockFormatDropDown({
       <Button intent="outline" size="sm" className="gap-1 px-2">
         {icon}
         <span className="text-sm">{label}</span>
-        <ChevronDownIcon className="size-3" />
+        <ChevronDownIcon />
       </Button>
       <MenuContent>{children}</MenuContent>
     </Menu>

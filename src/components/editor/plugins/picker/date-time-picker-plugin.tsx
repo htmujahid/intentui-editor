@@ -1,4 +1,4 @@
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon } from "@heroicons/react/24/outline";
 
 import { INSERT_DATETIME_COMMAND } from "@/components/editor/extensions/date-time-extension";
 import { ComponentPickerOption } from "@/components/editor/plugins/picker/component-picker-option";

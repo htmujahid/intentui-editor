@@ -7,7 +7,6 @@ import {
 import { $getSelection, $isRangeSelection, type BaseSelection } from "lexical";
 
 import { parseColor } from "@react-stately/color";
-import { BaselineIcon } from "lucide-react";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { useUpdateToolbarHandler } from "@/components/editor/editor-hooks/use-update-toolbar";
@@ -77,7 +76,7 @@ export function FontColorToolbarPlugin() {
           data-slot="control"
           className="flex-col gap-0.5 p-1"
         >
-          <BaselineIcon className="size-3.5" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round"><path d="M4 20h16" /><path d="m6 16 6-12 6 12" /><path d="M8 12h8" /></svg>
           <ColorSwatch className="size-auto! h-1 w-4 rounded-full" />
         </Button>
         <PopoverContent className="[--gutter:--spacing(3)]">

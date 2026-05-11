@@ -6,12 +6,12 @@ import {
 } from "@lexical/selection";
 import { $getSelection, $isRangeSelection, type BaseSelection } from "lexical";
 
-import { ChevronDownIcon, TypeIcon } from "lucide-react";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { useUpdateToolbarHandler } from "@/components/editor/editor-hooks/use-update-toolbar";
 import { Button } from "@/components/ui/button";
 import { Menu, MenuContent, MenuItem } from "@/components/ui/menu";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 const FONT_FAMILY_OPTIONS = [
   "Arial",
@@ -61,7 +61,10 @@ export function FontFamilyToolbarPlugin() {
         className="w-min gap-1 px-2"
         aria-label="Formatting options for font family"
       >
-        <TypeIcon className="size-4" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <path d="M3.75 6.25V3.75H12H20.25V6.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M12 20.25V3.75" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M9.75 20.25H12H14.25" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+
         <span style={{ fontFamily }}>{fontFamily}</span>
         <ChevronDownIcon className="size-3" />
       </Button>

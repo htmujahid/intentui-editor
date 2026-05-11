@@ -3,7 +3,7 @@ import { useCallback, useState } from "react";
 import { $isLinkNode, TOGGLE_LINK_COMMAND } from "@lexical/link";
 import { $isRangeSelection, type BaseSelection } from "lexical";
 
-import { LinkIcon } from "lucide-react";
+import { LinkIcon } from "@heroicons/react/24/outline";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { useUpdateToolbarHandler } from "@/components/editor/editor-hooks/use-update-toolbar";

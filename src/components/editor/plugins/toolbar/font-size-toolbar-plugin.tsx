@@ -6,12 +6,12 @@ import {
 } from "@lexical/selection";
 import { $getSelection, $isRangeSelection, type BaseSelection } from "lexical";
 
-import { Minus, Plus } from "lucide-react";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { useUpdateToolbarHandler } from "@/components/editor/editor-hooks/use-update-toolbar";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
+import { MinusIcon, PlusIcon } from "@heroicons/react/20/solid";
 
 const DEFAULT_FONT_SIZE = 16;
 const MIN_FONT_SIZE = 1;
@@ -61,7 +61,7 @@ export function FontSizeToolbarPlugin() {
         isDisabled={fontSize <= MIN_FONT_SIZE}
         aria-label="Decrease font size"
       >
-        <Minus className="size-3" />
+        <MinusIcon />
       </Button>
       <input
         type="text"
@@ -80,7 +80,7 @@ export function FontSizeToolbarPlugin() {
         isDisabled={fontSize >= MAX_FONT_SIZE}
         aria-label="Increase font size"
       >
-        <Plus className="size-3" />
+        <PlusIcon />
       </Button>
     </ButtonGroup>
   );

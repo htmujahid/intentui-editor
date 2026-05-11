@@ -1,4 +1,4 @@
-import { ImageIcon } from "lucide-react";
+import { PhotoIcon } from "@heroicons/react/24/outline";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { InsertImageDialog } from "@/components/editor/extensions/images-extension";
@@ -16,7 +16,7 @@ export function InsertImage() {
       }}
     >
       <div className="flex items-center gap-1">
-        <ImageIcon className="size-4" />
+        <PhotoIcon className="size-4" />
         <span>Image</span>
       </div>
     </MenuItem>

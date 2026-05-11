@@ -33,6 +33,7 @@ type ImageStatus =
 
 const imageCache = new Map<string, Promise<ImageStatus> | ImageStatus>();
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const RIGHT_CLICK_IMAGE_COMMAND: LexicalCommand<MouseEvent> =
   createCommand("RIGHT_CLICK_IMAGE_COMMAND");
 

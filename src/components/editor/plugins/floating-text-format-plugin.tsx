@@ -26,20 +26,20 @@ import {
 
 import {
   BoldIcon,
-  CodeIcon,
   ItalicIcon,
   LinkIcon,
   StrikethroughIcon,
-  SubscriptIcon,
-  SuperscriptIcon,
   UnderlineIcon,
-} from "lucide-react";
+  CodeBracketIcon,
+} from "@heroicons/react/24/outline";
 
 import { getDOMRangeRect } from "@/components/editor/utils/get-dom-range-rect";
 import { getSelectedNode } from "@/components/editor/utils/get-selected-node";
 import { setFloatingElemPosition } from "@/components/editor/utils/set-floating-elem-position";
 import { Separator } from "@/components/ui/separator";
 import { Toggle } from "@/components/ui/toggle";
+import { SuperscriptIcon } from "@/components/editor/icons/superscript-icon.tsx";
+import { SubscriptIcon } from "@/components/editor/icons/subscriptIcon-icon.tsx";
 
 function TextFormatFloatingToolbar({
   editor,
@@ -94,7 +94,7 @@ function TextFormatFloatingToolbar({
       }
     }
   }
-  function mouseUpListener(_e: MouseEvent) {
+  function mouseUpListener(e: MouseEvent) {
     if (popupCharStylesEditorRef?.current) {
       if (popupCharStylesEditorRef.current.style.pointerEvents !== "auto") {
         popupCharStylesEditorRef.current.style.pointerEvents = "auto";
@@ -248,7 +248,7 @@ function TextFormatFloatingToolbar({
               editor.dispatchCommand(FORMAT_TEXT_COMMAND, "code");
             }}
           >
-            <CodeIcon className="size-4" />
+            <CodeBracketIcon className="size-4" />
           </Toggle>
           <Toggle
             size="sq-sm"

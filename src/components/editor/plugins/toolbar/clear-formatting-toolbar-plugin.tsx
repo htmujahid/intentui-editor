@@ -11,7 +11,6 @@ import {
   $isTextNode,
 } from "lexical";
 
-import { EraserIcon } from "lucide-react";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { Button } from "@/components/ui/button";
@@ -71,7 +70,10 @@ export function ClearFormattingToolbarPlugin() {
       size="sq-sm"
       onPress={clearFormatting}
     >
-      <EraserIcon className="size-4" />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+        <path d="M13.7927 3.20708L3.20696 13.7929C2.81643 14.1834 2.81643 14.8166 3.20696 15.2071L7.95696 19.9571C8.14449 20.1446 8.39885 20.25 8.66406 20.25H10.5787C10.848 20.25 11.1059 20.1414 11.2941 19.9487L20.8093 10.207C21.192 9.81517 21.1883 9.18842 20.801 8.80114L15.207 3.20708C14.8164 2.81655 14.1833 2.81655 13.7927 3.20708Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /><path d="M7 11L13.5 17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+
     </Button>
   );
 }
