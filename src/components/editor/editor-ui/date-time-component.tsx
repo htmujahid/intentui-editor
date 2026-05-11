@@ -16,7 +16,7 @@ import {
 
 import { format } from "date-fns";
 import { setHours, setMinutes } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon } from "@heroicons/react/24/outline";
 import { twMerge } from "tailwind-merge";
 
 import { Button } from "@/components/ui/button";

@@ -32,13 +32,14 @@ import {
   SELECTION_CHANGE_COMMAND,
 } from "lexical";
 
-import { Check, Pencil, Trash, X } from "lucide-react";
 
 import { getSelectedNode } from "@/components/editor/utils/get-selected-node";
 import { setFloatingElemPositionForLinkEditor } from "@/components/editor/utils/set-floating-elem-position-for-link-editor";
 import { sanitizeUrl } from "@/components/editor/utils/url";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { CheckIcon, XMarkIcon } from "@heroicons/react/20/solid";
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 function FloatingLinkEditor({
   editor,
@@ -240,7 +241,7 @@ function FloatingLinkEditor({
               setIsLink(false);
             }}
           >
-            <X className="size-4" />
+            <XMarkIcon />
           </Button>
           <Button
             size="sq-sm"
@@ -248,7 +249,7 @@ function FloatingLinkEditor({
             aria-label="Confirm"
             onPress={handleLinkSubmission}
           >
-            <Check className="size-4" />
+            <CheckIcon />
           </Button>
         </div>
       ) : (
@@ -271,7 +272,7 @@ function FloatingLinkEditor({
                 setIsLinkEditMode(true);
               }}
             >
-              <Pencil className="size-4" />
+              <PencilIcon />
             </Button>
             <Button
               size="sq-sm"
@@ -281,7 +282,7 @@ function FloatingLinkEditor({
                 editor.dispatchCommand(TOGGLE_LINK_COMMAND, null);
               }}
             >
-              <Trash className="size-4" />
+              <TrashIcon />
             </Button>
           </div>
         </div>

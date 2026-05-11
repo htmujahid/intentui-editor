@@ -11,7 +11,7 @@ import {
 import { LexicalTypeaheadMenuPlugin } from "@lexical/react/LexicalTypeaheadMenuPlugin";
 import { TextNode } from "lexical";
 
-import { CircleUserRoundIcon } from "lucide-react";
+import { UserCircleIcon } from "@heroicons/react/24/outline";
 
 import { $createMentionNode } from "@/components/editor/nodes/mention-node";
 
@@ -177,7 +177,7 @@ export function MentionsPlugin(): JSX.Element | null {
           (result) =>
             new MentionTypeaheadOption(
               result,
-              <CircleUserRoundIcon className="size-4" />,
+              <UserCircleIcon className="size-4" />,
             ),
         )
         .slice(0, SUGGESTION_LIST_LENGTH_LIMIT),

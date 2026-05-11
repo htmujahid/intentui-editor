@@ -11,7 +11,7 @@ import {
   createCommand,
 } from "lexical";
 
-import { MicIcon } from "lucide-react";
+import { MicrophoneIcon } from "@heroicons/react/24/outline";
 
 import { useReport } from "@/components/editor/editor-hooks/use-report";
 import { CAN_USE_DOM } from "@/components/editor/shared/can-use-dom";
@@ -124,7 +124,7 @@ function SpeechToTextPluginImpl() {
         size="sq-sm"
         aria-label={`${isSpeechToText ? "Disable" : "Enable"} speech to text`}
       >
-        <MicIcon className="size-4" />
+        <MicrophoneIcon className="size-4" />
       </Button>
       <TooltipContent>Speech To Text</TooltipContent>
     </Tooltip>

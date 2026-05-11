@@ -11,13 +11,13 @@ import {
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import type { LexicalEditor } from "lexical";
 
-import { X } from "lucide-react";
 
 import { useEditorModal } from "@/components/editor/editor-hooks/use-modal";
 import { INSERT_TWEET_COMMAND } from "@/components/editor/plugins/embeds/twitter-plugin";
 import { INSERT_YOUTUBE_COMMAND } from "@/components/editor/plugins/embeds/youtube-plugin";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 const YoutubeIcon = (
   <svg
@@ -203,7 +203,7 @@ export function AutoEmbedPlugin(): JSX.Element {
                 {options.map((option, index) => {
                   const isDismiss = option.title === "Dismiss";
                   const icon = isDismiss ? (
-                    <X className="size-4" />
+                    <XMarkIcon />
                   ) : (
                     activeConfig?.icon ?? null
                   );

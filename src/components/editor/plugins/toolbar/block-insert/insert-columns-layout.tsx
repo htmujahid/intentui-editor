@@ -1,8 +1,8 @@
-import { Columns3Icon } from "lucide-react";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { InsertLayoutDialog } from "@/components/editor/plugins/layout-plugin";
 import { MenuItem } from "@/components/ui/menu";
+import { ViewColumnsIcon } from "@heroicons/react/24/outline";
 
 export function InsertColumnsLayout() {
   const { activeEditor, showModal } = useToolbarContext();
@@ -16,7 +16,7 @@ export function InsertColumnsLayout() {
       }
     >
       <div className="flex items-center gap-1">
-        <Columns3Icon className="size-4" />
+        <ViewColumnsIcon />
         <span>Columns Layout</span>
       </div>
     </MenuItem>

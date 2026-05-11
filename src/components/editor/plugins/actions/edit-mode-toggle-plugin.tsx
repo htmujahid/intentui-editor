@@ -2,7 +2,10 @@ import { useState } from "react";
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
-import { LockIcon, UnlockIcon } from "lucide-react";
+import {
+  LockClosedIcon,
+  LockOpenIcon,
+} from "@heroicons/react/24/outline";
 
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip";
@@ -23,9 +26,9 @@ export function EditModeTogglePlugin() {
         aria-label={`${!isEditable ? "Unlock" : "Lock"} read-only mode`}
       >
         {isEditable ? (
-          <LockIcon className="size-4" />
+          <LockClosedIcon className="size-4" />
         ) : (
-          <UnlockIcon className="size-4" />
+          <LockOpenIcon className="size-4" />
         )}
       </Button>
       <TooltipContent>

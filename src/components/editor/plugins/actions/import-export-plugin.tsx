@@ -1,7 +1,10 @@
 import { exportFile, importFile } from "@lexical/file";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 
-import { DownloadIcon, UploadIcon } from "lucide-react";
+import {
+  ArrowDownTrayIcon,
+  ArrowUpTrayIcon,
+} from "@heroicons/react/24/outline";
 
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip";
@@ -17,7 +20,7 @@ export function ImportExportPlugin() {
           onPress={() => importFile(editor)}
           aria-label="Import editor state from JSON"
         >
-          <UploadIcon className="size-4" />
+          <ArrowUpTrayIcon className="size-4" />
         </Button>
         <TooltipContent>Import Content</TooltipContent>
       </Tooltip>
@@ -34,7 +37,7 @@ export function ImportExportPlugin() {
           }
           aria-label="Export editor state to JSON"
         >
-          <DownloadIcon className="size-4" />
+          <ArrowDownTrayIcon className="size-4" />
         </Button>
         <TooltipContent>Export Content</TooltipContent>
       </Tooltip>

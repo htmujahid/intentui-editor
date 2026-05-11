@@ -1,4 +1,4 @@
-import { TableIcon } from "lucide-react";
+import { TableCellsIcon } from "@heroicons/react/24/outline";
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { InsertTableDialog } from "@/components/editor/plugins/table-plugin";
@@ -16,7 +16,7 @@ export function InsertTable() {
       }
     >
       <div className="flex items-center gap-1">
-        <TableIcon className="size-4" />
+        <TableCellsIcon className="size-4" />
         <span>Table</span>
       </div>
     </MenuItem>

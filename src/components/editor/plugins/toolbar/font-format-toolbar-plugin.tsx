@@ -8,16 +8,15 @@ import {
   type TextFormatType,
 } from "lexical";
 
-import {
-  BoldIcon,
-  ItalicIcon,
-  StrikethroughIcon,
-  UnderlineIcon,
-} from "lucide-react";
+
 
 import { useToolbarContext } from "@/components/editor/context/toolbar-context";
 import { useUpdateToolbarHandler } from "@/components/editor/editor-hooks/use-update-toolbar";
 import { Toggle } from "@/components/ui/toggle";
+import { BoldIcon } from "@/components/editor/icons/bold-icon.tsx";
+import { ItalicIcon } from "@/components/editor/icons/italic-icon.tsx";
+import { UnderlineIcon } from "@/components/editor/icons/underline-icon.tsx";
+import { StrikethroughIcon } from "@/components/editor/icons/strikethrough-icon.tsx";
 
 const FORMATS = [
   { format: "bold", icon: BoldIcon, label: "Bold" },

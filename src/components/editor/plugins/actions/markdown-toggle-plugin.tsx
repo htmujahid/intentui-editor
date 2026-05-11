@@ -9,7 +9,7 @@ import {
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { $createTextNode, $getRoot } from "lexical";
 
-import { FileTextIcon } from "lucide-react";
+import { DocumentTextIcon } from "@heroicons/react/24/outline";
 
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent } from "@/components/ui/tooltip";
@@ -59,7 +59,7 @@ export function MarkdownTogglePlugin({
         onPress={handleMarkdownToggle}
         aria-label="Convert from markdown"
       >
-        <FileTextIcon className="size-4" />
+        <DocumentTextIcon className="size-4" />
       </Button>
       <TooltipContent>Markdown</TooltipContent>
     </Tooltip>

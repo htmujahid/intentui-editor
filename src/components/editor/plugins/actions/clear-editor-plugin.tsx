@@ -1,7 +1,7 @@
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { CLEAR_EDITOR_COMMAND } from "lexical";
 
-import { Trash2Icon } from "lucide-react";
+import { TrashIcon } from "@heroicons/react/24/outline";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -22,7 +22,7 @@ export function ClearEditorActionPlugin() {
     <Tooltip>
       <Modal>
         <Button intent="plain" size="sq-sm" aria-label="Clear editor">
-          <Trash2Icon className="size-4" />
+          <TrashIcon className="size-4" />
         </Button>
         <ModalContent size="sm">
           <ModalHeader>

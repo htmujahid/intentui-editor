@@ -96,8 +96,8 @@ export function CodeLanguageToolbarPlugin() {
 
   return (
     <Select
-      selectedKey={codeLanguage || null}
-      onSelectionChange={(key) => {
+      value={codeLanguage || null}
+      onChange={(key) => {
         if (key !== null) onCodeLanguageSelect(String(key));
       }}
       aria-label="Code language"

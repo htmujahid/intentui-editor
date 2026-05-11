@@ -1,13 +1,10 @@
 import { FORMAT_ELEMENT_COMMAND } from "lexical";
 
-import {
-  AlignCenterIcon,
-  AlignJustifyIcon,
-  AlignLeftIcon,
-  AlignRightIcon,
-} from "lucide-react";
-
 import { ComponentPickerOption } from "@/components/editor/plugins/picker/component-picker-option";
+import { AlignLeftIcon } from "@/components/editor/icons/align-left-icon.tsx";
+import { AlignCenterIcon } from "@/components/editor/icons/align-center-icon.tsx";
+import { AlignRightIcon } from "@/components/editor/icons/align-right-icon.tsx";
+import { AlignJustifyIcon } from "@/components/editor/icons/align-justify-icon.tsx";
 
 export function AlignmentPickerPlugin({
   alignment,
